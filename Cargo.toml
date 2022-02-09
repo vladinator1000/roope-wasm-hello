@@ -1,0 +1,49 @@
+# You must change these to your own details.
+[package]
+authors = ["Vlady Veselinov <vladyv@protonmail.com>"]
+categories = ["wasm"]
+description = "roope-wasm-hello"
+edition = "2021"
+name = "roope-wasm-hello"
+readme = "README.md"
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+# This makes the compiled code faster and smaller, but it makes compiling slower,
+# so it's only enabled in release mode.
+lto = true
+
+[features]
+# If you uncomment this line, it will enable `wee_alloc`:
+#default = ["wee_alloc"]
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+gloo = "0.6"
+wasm-bindgen = "0.2.79"
+wee_alloc = {version = "0.4.5", optional = true}
+
+# The `web-sys` crate allows you to interact with the various browser APIs,
+# like the DOM.
+[dependencies.web-sys]
+features = [
+  'Document',
+  'Element',
+  'EventTarget',
+  'HtmlElement',
+  'Node',
+  'Window',
+  'MouseEvent',
+  "DomRect",
+]
+version = "0.3.55"
+
+# These crates are used for running unit tests.
+[dev-dependencies]
+futures = "0.3.19"
+js-sys = "0.3.56"
+wasm-bindgen-futures = "0.4.29"
+wasm-bindgen-test = "0.3.28"

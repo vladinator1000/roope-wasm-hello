@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>For Roope</title>
+    <style>
+      :root {
+        --primary: #FFFF00;
+        --secondary: #C0C0C0;
+      }
+
+      @font-face {
+        font-family: "Clacon";
+        src: url('fonts/clacon2.woff2') format('woff2');
+      }
+
+      html, body {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        height: 100%;
+        width: 100%;
+
+        font-family: Clacon, Calibri;
+        background-color: #0B1418;
+        color: #c7c7c7;
+      }
+     
+      a {
+        color: var(--primary)
+      }
+
+      .container {
+        font-size: x-large;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 2px;
+        height:fit-content;
+      } 
+
+      .greeting {
+        margin-top: 30px;
+        font-weight: 100;
+        font-size: medium;
+        color: #FFFFFF
+      }
+      
+      .hint {
+        font-weight: 100;
+        font-size: medium;
+      }
+
+      #card { 
+        color: var(--secondary);
+        
+        width: 480px;
+        height: auto;
+        
+        padding: 14px;
+        padding-right: 0px;
+        border: 3px dashed var(--primary);
+      }
+
+      @media screen and (max-width: 1000px) {
+        /* Disable scroll */
+        html body {
+          margin: 0;
+          overflow: hidden;
+        }
+      }
+
+      .no-user-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>This page contains WebAssembly and JavaScript, please enable JavaScript in your browser.</noscript>
+    <div class="container">
+      <span class="greeting no-user-select">Hello (please scratch)</span>
+      <p id="card" class="no-user-select"></p>
+      <a class="hint no-user-select" href="https://github.com/vladinator1000/roope-wasm-hello" target="_blank">source</a>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
